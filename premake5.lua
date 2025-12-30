@@ -26,3 +26,10 @@ project "ImGui"
         
     filter { "system:windows", "configurations:Release" }
         buildoptions "/MT"
+        
+    filter "system:linux"
+        cppdialect "C++17"
+        -- Position Independent Code for Linux
+        pic "on"
+
+    filter "configurations:Debug"
