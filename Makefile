@@ -36,8 +36,8 @@ ifeq ($(config),debug)
 TARGETDIR = ../../bin/Debug-linux-x86_64/ImGui
 TARGET = $(TARGETDIR)/libImGui.a
 OBJDIR = ../../bin-int/Debug-linux-x86_64/ImGui
-ALL_CFLAGS += $(CFLAGS) $(ALL_CPPFLAGS) -m64 -g
-ALL_CXXFLAGS += $(CXXFLAGS) $(ALL_CPPFLAGS) -m64 -g -std=c++17
+ALL_CFLAGS += $(CFLAGS) $(ALL_CPPFLAGS) -m64 -fPIC -g
+ALL_CXXFLAGS += $(CXXFLAGS) $(ALL_CPPFLAGS) -m64 -fPIC -g -std=c++17
 LIBS += ../GLFW/bin/Debug-linux-x86_64/GLFW/libGLFW.a -lGL -ldl -lpthread
 LDDEPS += ../GLFW/bin/Debug-linux-x86_64/GLFW/libGLFW.a
 ALL_LDFLAGS += $(LDFLAGS) -L/usr/lib64 -m64
@@ -46,8 +46,8 @@ else ifeq ($(config),release)
 TARGETDIR = ../../bin/Release-linux-x86_64/ImGui
 TARGET = $(TARGETDIR)/libImGui.a
 OBJDIR = ../../bin-int/Release-linux-x86_64/ImGui
-ALL_CFLAGS += $(CFLAGS) $(ALL_CPPFLAGS) -m64 -O2
-ALL_CXXFLAGS += $(CXXFLAGS) $(ALL_CPPFLAGS) -m64 -O2 -std=c++17
+ALL_CFLAGS += $(CFLAGS) $(ALL_CPPFLAGS) -m64 -O2 -fPIC
+ALL_CXXFLAGS += $(CXXFLAGS) $(ALL_CPPFLAGS) -m64 -O2 -fPIC -std=c++17
 LIBS += ../GLFW/bin/Release-linux-x86_64/GLFW/libGLFW.a -lGL -ldl -lpthread
 LDDEPS += ../GLFW/bin/Release-linux-x86_64/GLFW/libGLFW.a
 ALL_LDFLAGS += $(LDFLAGS) -L/usr/lib64 -m64 -s
@@ -56,8 +56,8 @@ else ifeq ($(config),dist)
 TARGETDIR = ../../bin/Dist-linux-x86_64/ImGui
 TARGET = $(TARGETDIR)/libImGui.a
 OBJDIR = ../../bin-int/Dist-linux-x86_64/ImGui
-ALL_CFLAGS += $(CFLAGS) $(ALL_CPPFLAGS) -m64 -O2
-ALL_CXXFLAGS += $(CXXFLAGS) $(ALL_CPPFLAGS) -m64 -O2 -std=c++17
+ALL_CFLAGS += $(CFLAGS) $(ALL_CPPFLAGS) -m64 -O2 -fPIC
+ALL_CXXFLAGS += $(CXXFLAGS) $(ALL_CPPFLAGS) -m64 -O2 -fPIC -std=c++17
 LIBS += ../GLFW/bin/Dist-linux-x86_64/GLFW/libGLFW.a -lGL -ldl -lpthread
 LDDEPS += ../GLFW/bin/Dist-linux-x86_64/GLFW/libGLFW.a
 ALL_LDFLAGS += $(LDFLAGS) -L/usr/lib64 -m64 -s

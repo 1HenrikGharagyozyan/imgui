@@ -38,6 +38,7 @@ project "ImGui"
 
     filter "system:linux"
         systemversion "latest"
+        pic "On"
 
     filter "configurations:Debug"
         runtime "Debug"
